@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  backend:
+    container_name: golang
+    build: ./builds
+    ports:
+      - "9001:9001"
+    volumes:
+        - ./volumes:/go/src/dir
+    working_dir: /go/src/dir
+    command: ["go","run","/go/src/dir/main.go"]
+    environment:
+      TZ: Asia/Bangkok
+    restart: always

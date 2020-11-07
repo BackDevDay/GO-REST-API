@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go-rest-api/api"
+	"rest/api"
 
 	"github.com/gin-gonic/gin"
 )
@@ -10,10 +10,10 @@ import (
 func main() {
 
 	router := gin.Default()
-	router.Static("/uploads", "./uploads")
+	router.Static("/uploads", "../volumes/uploads")
 
 	api.Setup(router)
 
-	fmt.Println("Environment Port : 9001")
-	router.Run(":9001")
+	fmt.Println("Environment Port : 8001")
+	router.Run(":8001")
 }

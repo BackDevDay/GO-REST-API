@@ -1,13 +1,13 @@
 package api
 
 import (
-	"go-rest-api/db"
+	"rest/db"
 
 	"github.com/gin-gonic/gin"
 )
 
-// Setup - call this method to setup routes
+// Setup - call this
 func Setup(router *gin.Engine) {
-
 	db.ConnectDB()
+	SetupAuthenAPI(router)
 }

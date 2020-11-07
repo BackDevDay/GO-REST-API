@@ -1,7 +1,7 @@
 package db
 
 import (
-	"go-rest-api/model"
+	"rest/model"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -9,7 +9,8 @@ import (
 
 var database *gorm.DB
 
-func getDatabase() *gorm.DB {
+// GetDatabase - for call
+func GetDatabase() *gorm.DB {
 	return database
 }
 

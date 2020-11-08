@@ -17,7 +17,7 @@ func GetDatabase() *gorm.DB {
 // ConnectDB - connect DB
 func ConnectDB() {
 	// set mySQL
-	dsn := "root:12345678@tcp(0.0.0.0:9001)/golang?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "root:12345678@tcp(mysql:3306)/golang?charset=utf8mb4&parseTime=True&loc=Local"
 	db, error := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
 	if error != nil {

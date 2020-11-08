@@ -18,9 +18,6 @@ func main() {
 	gin.DefaultErrorWriter = errlogfile
 	gin.DefaultWriter = accesslogfile
 
-	// router.Use(gin.Logger())
-	// custom format logger
-
 	router.Use(gin.LoggerWithFormatter(func(param gin.LogFormatterParams) string {
 
 		return fmt.Sprintf("%s  \"%s %s %s %d %s \"%s\" %s\"\n",
@@ -35,7 +32,7 @@ func main() {
 		)
 	}))
 
-	router.Static("/uploads", "../volumes/uploads")
+	router.Static("/uploads", "/uploads")
 
 	api.Setup(router)
 

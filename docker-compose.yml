@@ -4,11 +4,17 @@ services:
     container_name: golang
     build: ./builds
     ports:
-      - "9001:9001"
+      - "8001:8001"
     volumes:
         - ./volumes:/go/src/dir
     working_dir: /go/src/dir
-    command: ["go","run","/go/src/dir/main.go"]
+    command: ["go","run","/go/src/dir/index.go"]
+        # - "/go/src/dir/rest"
     environment:
       TZ: Asia/Bangkok
     restart: always
+
+networks:
+    default:
+        external:
+            name: DB-Networks

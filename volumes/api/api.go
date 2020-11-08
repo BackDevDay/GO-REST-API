@@ -11,5 +11,4 @@ func Setup(router *gin.Engine) {
 	db.ConnectDB()
 	SetupAuthenAPI(router)
 	SetupProductAPI(router)
-
 }

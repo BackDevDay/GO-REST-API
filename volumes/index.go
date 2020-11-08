@@ -32,6 +32,16 @@ func main() {
 		)
 	}))
 
+	// - No origin allowed by default
+	// - GET,POST, PUT, HEAD methods
+	// - Credentials share disabled
+	// - Preflight requests cached for 12 hours
+	config := cors.DefaultConfig()
+	config.AllowOrigins = []string{"http://google.com"}
+	// config.AllowOrigins == []string{"http://google.com", "http://facebook.com"}
+
+	router.Use(cors.New(config))
+
 	router.Static("/uploads", "/uploads")
 
 	api.Setup(router)
